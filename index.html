@@ -1,0 +1,2001 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CoderDeck Sample</title>
+	<meta name="viewport" content="width=1024">
+
+    <link rel="stylesheet" href="lib/coderdeck-core.min.css" type="text/css">
+	<link rel="stylesheet" id='style-theme-link' href="lib/coderdeck.css" type="text/css" >
+	<style>
+	.deck-container .slide-list h2 {
+		font-size: 1.5em;
+	}
+	</style>
+
+	<script src='lib/jquery.min.js'></script>
+	<script src="lib/modernizr.js"></script>
+</head>
+<body class="deck-container">
+
+<script type='text/coderdeck' id='coderdeck-default'>
+  <html>
+    <head>
+      <script src='lib/jquery.min.js'>SCRIPTEND
+    </head>
+    <body>
+	    CODE
+    </body>
+</html>
+</script>
+
+
+<script type='text/coderdeck' id='coderdeck-style-example'>
+	<html>
+		<title>test</title>
+		<style>
+			CODE
+		</style>
+		<body>
+			<h1>I'm a H1 heading</h1>
+			<h2>I'm a H2 heading</h2>
+			<p>Pargraph of text &lt;p&gt; here</p>
+			<div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+			<div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+		</body>
+	</html>
+</script> 	
+
+<article class='slide slide-subhead'>
+<h1>CSS Selectors</h1>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>CSS Selectors</h1>
+<h2><a href='http://github.com/cykod/CoderDeck'>http://github.com/cykod/CoderDeck</a><br/>
+	create interactive live-coding presentations for the web.<br/>
+	use the arrow-keys go between slides.
+</h2>
+</article>
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>#id</h2>
+<p>#firstname<br/>
+Selects the element with id="firstname"</p>
+
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+#firstname
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div class="intro">
+<p id="firstname">My name is Donald.</p>
+<p id="hometown">I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>.class</h2>
+<p>.intro<br/>
+Selects all elements with class="intro"</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+.intro
+{
+background-color:yellow;
+}
+</style>
+</head>
+
+<body>
+<h1>Welcome to My Homepage</h1>
+
+<div class="intro">
+<p>My name is Donald.</p>
+<p>I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+</body>
+</textarea>
+</article>
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>*</h2>
+<p>
+*<br/>
+Selects all elements
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+div *
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div class="intro">
+<p id="firstname">My name is Donald.</p>
+<p id="hometown">I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>element</h2>
+<p>
+p<br/>
+Selects all &lt;p&gt; elements
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+p
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div>
+<p id="firstname">My name is Donald.</p>
+<p id="hometown">I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>element,element</h2>
+<p>
+div,p<br/>
+Selects all &lt;div&gt; elements and all &lt;p&gt; elements
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+h1,p
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div>
+<p>My name is Donald.</p>
+<p>I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>element element</h2>
+<p>
+div p<br/>
+Selects all &lt;p&gt; elements inside &ltdiv&gt; elements
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+div p
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div>
+<h2>My name is Donald</h2>
+<p>I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>element>element</h2>
+<p>
+div>p<br/>
+Selects all &lt;p&gt; elements where the parent is a &lt;div&gt; element
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+div>p
+{
+background-color:yellow;
+}
+</style>
+</head>
+
+<body>
+<h1>Welcome to My Homepage</h1>
+<div>
+<h2>My name is Donald</h2>
+<p>I live in Duckburg.</p>
+</div>
+
+<div>
+<span><p>I will not be styled.</p></span>
+</div>
+
+<p>My best friend is Mickey.</p>
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>element+element</h2>
+<p>
+div+p<br/>
+Selects all &lt;p&gt; elements that are placed immediately after &lt;div&gt; elements
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+div+p
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div>
+<h2>My name is Donald</h2>
+<p>I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+<p>I will not be styled.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>[attribute]</h2>
+<p>
+[target]<br/>
+Selects all elements with a target attribute
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+a[target]
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<p>The links with a target attribute gets a yellow background:</p>
+
+<a href="http://www.w3schools.com">w3schools.com</a>
+<a href="http://www.disney.com" target="_blank">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+<p><b>Note:</b> For [<i>attribute</i>] to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>[attribute=value]</h2>
+<p>
+[target=_blank]<br/>
+Selects all elements with target="_blank"
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+a[target=_blank]
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<p>The link with target="_blank" gets a yellow background:</p>
+
+<a href="http://www.w3schools.com">w3schools.com</a>
+<a href="http://www.disney.com" target="_blank">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+<p><b>Note:</b> For [<i>attribute</i>] to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>[attribute~=value]</h2>
+<p>
+[title~=flower]<br/>
+Selects all elements with a title attribute containing the word "flower"
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+[title~=flower]
+{
+border:5px solid yellow;
+}
+</style>
+</head>
+<body>
+
+<p>The image with the title attribute containing the word "flower" gets a yellow border.</p>
+
+<img src="klematis.jpg" title="klematis flower" width="150" height="113" />
+<img src="img_flwr.gif" title="flowers" width="224" height="162" />
+<img src="landscape.jpg" title="landscape" width="160" height="120" />
+
+<p><b>Note:</b> For [<i>attribute</i>~=<i>value</i>] to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>[attribute|=value]</h2>
+<p>
+[lang|=en]<br/>
+Selects all elements with a lang attribute value starting with "en"
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+[lang|=en]
+{
+background:yellow;
+}
+</style>
+</head>
+
+<body>
+<p lang="en">Hello!</p>
+<p lang="en-us">Hi!</p>
+<p lang="en-gb">Ello!</p>
+<p lang="us">Hi!</p>
+<p lang="no">Hei!</p>
+
+<p><b>Note:</b> For [<i>attribute</i>|=<i>value</i>] to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:focus</h2>
+<p>
+input:focus<br/>
+Selects the input element which has focus
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+input:focus
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<p>Click inside the text fields to see a yellow background:</p>
+
+<form>
+First name: <input type="text" name="firstname" /><br />
+Last name: <input type="text" name="lastname" />
+</form>
+
+<p><b>Note:</b> For :focus to work in IE8, a DOCTYPE must be declared.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:active</h2>
+<p>
+a:active<br/>
+Selects the active link
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+a:active
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<a href="http://www.w3schools.com">w3schools.com</a>
+<a href="http://www.wikipedia.org">wikipedia.org</a>
+
+<p><b>Note:</b> The :active selector styles the active link.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:before</h2>
+<p>
+p:before<br/>
+Insert content before  the content of every &lt;p&gt; element
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+p:before
+{
+content:"Read this -";
+}
+</style>
+</head>
+
+<body>
+<p>My name is Donald</p>
+<p>I live in Ducksburg</p>
+
+<p><b>Note:</b> For :before to work in IE8, a DOCTYPE must be declared.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:after</h2>
+<p>
+p:after<br/>
+Insert content after every &lt;p&gt; element	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+p:after
+{ 
+content:"- Remember this";
+}
+</style>
+</head>
+
+<body>
+<p>My name is Donald</p>
+<p>I live in Ducksburg</p>
+
+<p><b>Note:</b> For :after to work in IE8, a DOCTYPE must be declared.</p>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>element1~element2</h2>
+<p>
+p~ul<br/>
+Selects every &lt;ul&gt; element that are preceded by a &lt;p&gt; element	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p~ul
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+<div>A div element.</div>
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+</ul>
+<p>The first paragraph.</p>
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+</ul>
+<h2>Another list</h2>
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+</ul>
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>[attribute^=value]</h2>
+<p>
+a[src^="https"]	<br/>
+Selects every &lt;a&gt; element whose src attribute value begins with "https"	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+div[class^="test"]
+{
+background:#ffff00;
+}
+</style>
+</head>
+<body>
+
+<div class="first_test">The first div element.</div>
+<div class="second">The second div element.</div>
+<div class="test">The third div element.</div>
+<p class="test">This is some text in a paragraph.</div>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>[attribute$=value]</h2>
+<p>
+a[src$=".pdf"]	<br/>
+Selects every &lt;a&gt; element whose src attribute value ends with ".pdf"	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+div[class$="test"]
+{
+background:#ffff00;
+}
+</style>
+</head>
+<body>
+
+<div class="first_test">The first div element.</div>
+<div class="second">The second div element.</div>
+<div class="test">The third div element.</div>
+<p class="test">This is some text in a paragraph.</div>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>[attribute*=value]</h2>
+<p>
+a[src*="w3schools"]	<br/>
+Selects every &lt;a&gt; element whose src attribute value contains the substring "w3schools"	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+div[class*="test"]
+{
+background:#ffff00;
+}
+</style>
+</head>
+<body>
+
+<div class="first_test">The first div element.</div>
+<div class="second">The second div element.</div>
+<div class="test">The third div element.</div>
+<p class="test">This is some text in a paragraph.</div>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:first-of-type</h2>
+<p>
+p:first-of-type	<br/>
+Selects every &lt;p&gt; element that is the first &lt;p&gt; element of its parent	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:first-of-type
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>The first paragraph.</p>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>
+<p>The fourth paragraph.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:last-of-type</h2>
+<p>
+p:last-of-type	<br/>
+Selects every &lt;p&gt; element that is the last &lt;p&gt; element of its parent	 
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:last-of-type
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>The first paragraph.</p>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>
+<p>The fourth paragraph.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:only-of-type</h2>
+<p>
+p:only-of-type	<br/>
+Selects every &lt;p&gt; element that is the only &lt;p&gt; element of its parent	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:only-of-type
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<div><p>This is a paragraph.</p></div>
+
+<div><p>This is a paragraph.</p><p>This is a paragraph.</p></div>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:only-child</h2>
+<p>
+p:only-child	<br/>
+Selects every &lt;p&gt; element that is the only child of its parent	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:only-child
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<div><p>This is a paragraph.</p></div>
+
+<div><span>This is a span.</span><p>This is a paragraph.</p></div>
+
+<p><b>Note:</b> Internet Explorer does not support the :only-child selector.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:nth-child(n)</h2>
+<p>
+p:nth-child(2)	<br/>
+Selects every <p> element that is the second child of its parent	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:nth-child(2)
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>The first paragraph.</p>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>
+<p>The fourth paragraph.</p>
+
+<p><b>Note:</b> Internet Explorer does not support the :nth-child() selector.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:nth-last-child(n)</h2>
+<p>
+p:nth-last-child(2)	<br/>
+Selects every <p> element that is the second child of its parent, counting from the last child	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:nth-last-child(2)
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<p>The first paragraph.</p>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>
+<p>The fourth paragraph.</p>
+
+<p><b>Note:</b> Internet Explorer does not support the :nth-last-child() selector.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:nth-of-type(n)</h2>
+<p>
+p:nth-of-type(2)	<br/>
+Selects every <p> element that is the second <p> element of its parent	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:nth-of-type(2)
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>The first paragraph.</p>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>
+<p>The fourth paragraph.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:nth-last-of-type(n)</h2>
+<p>
+p:nth-last-of-type(2)	<br/>
+Selects every <p> element that is the second <p> element of its parent, counting from the last child	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:nth-last-of-type(2)
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>The first paragraph.</p>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>
+<p>The fourth paragraph.</p>
+
+<p><b>Note:</b> Internet Explorer does not support the :nth-last-of-type() selector.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:last-child</h2>
+<p>
+p:last-child	<br/>
+Selects every <p> element that is the last child of its parent	<br>
+크롬에서 안됨
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:last-child
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<p>The first paragraph.</p>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>
+<p>The fourth paragraph.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>:empty</h2>
+<p>
+p:empty<br/>
+Selects every <p> element that has no children (including text nodes)	
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:empty
+{
+width:100px;
+height:20px;
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<p></p>
+<p>A paragraph.</p>
+<p>Another paragraph.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>id</h2>
+<p>
+firstname<br/>
+Selects
+</p>
+<textarea class='coder-editor'>
+
+</textarea>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class='slide slide-list'>
+<h2>How to use it?</h2>
+<p>Download a release and modify the index.html with your slide. Slides are created with by adding a class='slide' to any element. CoderDeck areas are created
+	by adding a class of 'coder-editor' to a text area, for example (prettyprint is also bundled, so, as below just use a &lt;pre class='prettyprint'&gt;.. to highlight static code):</p>
+<pre class='prettyprint'>
+&lt;article class='slide slide-list'&gt;
+  &lt;h2&gt;This is a second level heading!&lt;/h2&gt;
+  &lt;p&gt;Here is some descriptive text, followed by a split editor. &lt;/p&gt;
+  &lt;textarea class='coder-editor'&gt;
+    &lt;script&gt;
+       alert("Yay!");
+    &lt;/script&gt; 
+  &lt;textarea&gt;
+&lt;/article&gt;
+</pre>
+
+</article>
+
+
+<!-- Apply a class of "coder-editor-full" along with "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>Full Page Code Editor</h2>
+<p>Basic full page code editor is created by adding a class of "coder-editor-full" along with "coder-editor" to a textarea.
+   Press run, then press "back", then modify some code and press "run" again</p>
+
+<textarea class='coder-editor coder-editor-full'>
+<header>
+  <h1>My Site!</h1>
+  <nav><ul>
+    <li><a href='#'>Link 1</a></li>
+    <li><a href='#'>Link 2</a></li>
+  </ul></nav>
+</header>
+
+<section id='content'>
+  <article class='blog-post'>
+    <h1>Blog Post 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
+  </article>
+</section>
+<footer>
+  <a href='#'>Link 1</a> | <a href='#'>Link 2</a>
+</footer>	
+</textarea>
+</article>
+
+<!-- use a class of gist and a data-gist-id to pull the code example from a gist -->
+<article class='slide slide-list'>
+<h2>Pulling from Gists</h2>
+<p>Use a class of 'gist' and an attribute of data-gist-id for the Gist ID</p>
+<div class='gist' data-gist-classes='coder-editor coder-editor-full' data-gist-id='1262553'></div>
+</article>
+
+<!-- add a "data-coder-template" to use a different template (see the template definitions at the top)
+     add a "data-language" to use a different CodeMirror2 mode other than htmlmixed. Options include "html", "javascript", "css", "xml" and any other mode supported by CodeMirror2
+-->
+<article class='slide slide-list'>
+<h2>Custom template and custom language</h2>
+<p>You can create custom reusable templates for wrapping the editor code with custom &lt;script&gt; tags. You can also specify the mode the editor should display (xml, css, javascript or the default htmlmixed ) </p>
+
+<textarea class='coder-editor' data-coder-template="coderdeck-style-example" data-language="css">
+h1 { color:blue; }
+h2 { color:red;}
+p  { color:pink;}
+.stuff  { color:purple;}
+#my-div { color:teal;}
+</textarea>
+</article>
+
+
+
+<!-- add a "data-coder-instant" to do on-the-fly updating-->
+<article class='slide slide-list'>
+<h2>Instant Update Sample</h2>
+<p>Try modifying any of the HTML on the left, the right side should updated periodically as you type. This is done by adding a class of "coder-editor-instant" to the textarea</p>
+
+<textarea class='coder-editor coder-editor-instant' data-coder-template="coderdeck-style-example" data-language="css">
+h1 { color:blue; }
+h2 { color:red;}
+p  { color:pink;}
+.stuff  { color:purple;}
+#my-div { color:teal;}
+</textarea>
+</article>
+
+
+<!-- Javascript works normally as well, libraries and external css (including jquery) can be included in template -->
+<article class='slide slide-list'>
+<h2>Javascript/jQuery Example</h2>
+<p> Javascript works normally as well, libraries and external css (including jquery) can be included in the coderdeck template.</p>
+<textarea class='coder-editor'>
+<script>
+  $(function() {
+    $(".box").animate({ 
+        'top':"50%", 
+        'left':"50%" });
+  });
+</script>
+<style>
+  .box { 
+    top:0px; left:0px;
+    width:50px; height:50px; 
+    position:absolute; 
+    background-color:red;
+  }
+</style>
+<div class='box'></div>
+</textarea>
+</article>
+
+
+
+<article class='slide slide-list'>
+<h2>Local Storage</h2>
+<p>  If you want your changes to a slide to survive between page reloads you can define a data-save attribute which will save it to the attributes value in localstorage. Make a code change, hit run/save and reload this slide.</p>
+<p> You can also use the same 'data-save'  attribute on mulitiple slides to keep the same code moving forwad</p>
+<textarea class='coder-editor' data-save='dummy'>
+  <h1>This is some dummy content..</h1>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Solutions</h2>
+<p>If you want to add a solution to an exercise, you can add a coderdeck-solution script tag in the slide </p>
+<textarea class='coder-editor'>
+
+<script>
+    // Display an alert message
+    // if a confirm dialog returns true
+</script>
+</textarea>
+
+<script type='coder-solution'>
+SCRIPT
+  if(confirm("Do you want an alert?")) {
+      alert("Yay!");
+  }
+SCRIPTEND
+</script>
+</article>
+
+<script src='lib/coderdeck.min.js'></script>
+
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>

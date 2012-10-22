@@ -14,9 +14,6 @@
 	.deck-container {
 		padding: 0 30px;
 	}
-	.deck-container h5 {
-		padding-left: 50px;
-	}
 	</style>
 
 	<script src='lib/jquery.min.js'></script>
@@ -56,6 +53,8 @@
 <h1>CSS Selectors</h1>
 </article>
 
+
+
 <!-- Apply a class of "coder-editor-full" along with "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>사전 지식</h2>
@@ -88,182 +87,6 @@
 </footer>	
 </textarea>
 </article>
-
-
-<!-- Apply a class of "coder-editor-full" along with "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="http://www.w3.org/TR/selectors" target="_blank">Selectors</a>
-</h2>
-<p>Selectors are patterns that match against elements in a tree, and as such form one of several technologies that can be used to select nodes in an XML document. Selectors have been optimized for use with HTML and XML, and are designed to be usable in performance-critical code.</p>
-<p>CSS (Cascading Style Sheets) is a language for describing the rendering of HTML and XML documents on screen, on paper, in speech, etc. CSS uses Selectors for binding style properties to elements in the document.</p>
-
-</article>
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>Groups of selectors</h2>
-
-<p>
-A comma-separated list of selectors represents the union of all elements selected by each of the individual selectors in the list. (A comma is U+002C.) For example, in CSS when several selectors share the same declarations, they may be grouped into a comma-separated list. White space may appear before and/or after the comma.
-<br/>
-div,p<br/>
-Selects all &lt;div&gt; elements and all &lt;p&gt; elements
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-
-h1 { background-color:yellow; }
-p  { background-color:yellow; }
-
-/* is equivalent to:
-h1,p { background-color:yellow; }
-*/
-/* Invalid CSS example:
-h1,p, div%% { background-color:yellow; }
-*/
-</style>
-</head>
-<body>
-	<h1>Welcome to My Home</h1>
-	<div>My name is Han soo woong</div>
-	<p>Make yourself at home</p>
-</body>
-</textarea>
-</article>
-
-<article class='slide slide-subhead'>
-<h2>Type of Selectors</h2>
-<h3>simple selectors</h3>
-	<h5>Type selectors</h5>
-	<h5>Universal selector</h5>
-	<h5>Attribute selectors</h5>
-	<h5>Class selectors</h5>
-	<h5>ID selectors</h5>
-	<h5>Pseudo-classes</h5>
-<h3>Pseudo-elements</h3>
-	<h5>The ::before and ::after pseudo-elements</h5>
-<h3>Combinators</h3>
-	<h5>Descendant combinator</h5>
-	<h5>Child combinators</h5>
-	<h5>Sibling combinators</h5>
-<h3>Groups of selectors</h3>
-</article>
-
-
-
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Type_selectors" target="_blank">Simple selectors - Type Selectors</a>
-</h2>
-<p>
-CSS type selectors match elements by node name. Used alone, therefore, a type selector for a particular node name selects all elements of that type — that is, with that node name — in the document.
-<p>
-
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-	p { background-color:yellow; }
-</style>
-</head>
-<body>
-
-<h1>Welcome</h1>
-
-<p id="hometown">This is P element.</p>
-<p id="firstname">
-	<div>This is DIV element in P.</div>
-</p>
-<div>
-	<p>This is P element in DIV.</p>
-</div>
-</body>
-</textarea>
-</article>
-
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Universal_selectors" target="_blank">Universal Selectors</a>
-</h2>
-<p>
-*<br/>
-Selects all elements
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-div *
-{
-background-color:yellow;
-}
-</style>
-</head>
-<body>
-
-<h1>Welcome to My Homepage</h1>
-
-<div class="intro">
-<p id="firstname">My name is Donald.</p>
-<p id="hometown">I live in Duckburg.</p>
-</div>
-
-<p>My best friend is Mickey.</p>
-
-</body>
-</textarea>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -332,10 +155,108 @@ background-color:yellow;
 </textarea>
 </article>
 
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Universal_selectors" target="_blank">Universal Selectors</a>
+</h2>
+<p>
+*<br/>
+Selects all elements
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+div *
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div class="intro">
+<p id="firstname">My name is Donald.</p>
+<p id="hometown">I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+</body>
+</textarea>
+</article>
 
 
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Type_selectors" target="_blank">Type Selectors</a>
+</h2>
+<p>
+p<br/>
+Selects all &lt;p&gt; elements
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+p
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div>
+<p id="firstname">My name is Donald.</p>
+<p id="hometown">I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+</body>
+</textarea>
+</article>
 
 
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>Grouping</h2>
+<p>
+div,p<br/>
+Selects all &lt;div&gt; elements and all &lt;p&gt; elements
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+h1,p
+{
+    background-color:yellow;
+}
+/*
+h1{background-color:yellow;}
+p{background-color:yellow;}
+*/
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<div>
+<p>My name is Donald.</p>
+<p>I live in Duckburg.</p>
+</div>
+
+<p>My best friend is Mickey.</p>
+
+</body>
+</textarea>
+</article>
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
@@ -1261,14 +1182,12 @@ Selects
 <h2><a href='http://github.com/cykod/CoderDeck'>http://github.com/cykod/CoderDeck</a></h2>
 <h2><a href='http://www.quirksmode.org/mobile/'>http://www.quirksmode.org/mobile/</a></h2>
 <h2><a href='https://developer.mozilla.org/'>https://developer.mozilla.org/</a></h2>
-<h2><a href='http://www.w3.org/TR/selectors/'>http://www.w3.org/TR/selectors/</a></h2>
-<h2><a href='https://github.com/itswoong/CSSSelectorsWithCoderdeck'>Fork This reference on GitHub</a></h2>
-
 
 </article>
 
+
 <article class='slide slide-subhead'>
-<h1>Thank you</h1>
+<h1>감사합니다.</h1>
 </article>
 
 

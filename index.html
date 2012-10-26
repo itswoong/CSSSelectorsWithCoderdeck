@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -13,6 +13,21 @@
 	}
 	.deck-container {
 		padding: 0 30px;
+	}
+	.deck-container h5 {
+		padding-left: 50px;
+	}
+	.deck-container dt {
+		font-weight: bold;
+		margin-top: 10px;
+	}
+	.deck-container dd {
+		padding-left: 50px;
+	}
+	.deck-container .style-syntax {
+		font-family: "굴림";
+		font-weight: bold;
+		font-size: 17px;
 	}
 	</style>
 
@@ -53,8 +68,6 @@
 <h1>CSS Selectors</h1>
 </article>
 
-
-
 <!-- Apply a class of "coder-editor-full" along with "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>사전 지식</h2>
@@ -89,167 +102,128 @@
 </article>
 
 
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<!-- Apply a class of "coder-editor-full" along with "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/ID_selectors" target="_blank">ID Selectors</a>
+<a href="http://www.w3.org/TR/selectors" target="_blank">Selectors</a>
 </h2>
-<p>#firstname<br/>
-Selects the element with id="firstname"</p>
+<p>Selectors are patterns that match against elements in a tree, and as such form one of several technologies that can be used to select nodes in an XML document. Selectors have been optimized for use with HTML and XML, and are designed to be usable in performance-critical code.</p>
+<p>CSS (Cascading Style Sheets) is a language for describing the rendering of HTML and XML documents on screen, on paper, in speech, etc. CSS uses Selectors for binding style properties to elements in the document.</p>
 
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-#firstname
-{
-background-color:yellow;
-}
-</style>
-</head>
-<body>
-
-<h1>Welcome to My Homepage</h1>
-
-<div class="intro">
-<p id="firstname">My name is Donald.</p>
-<p id="hometown">I live in Duckburg.</p>
-</div>
-
-<p>My best friend is Mickey.</p>
-
-</body>
-</textarea>
 </article>
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
+<h2>Groups of selectors</h2>
 
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Class_selectors" target="_blank">Class Selectors</a>
-</h2>
-<p>.intro<br/>
-Selects all elements with class="intro"</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-.intro
-{
-background-color:yellow;
-}
-</style>
-</head>
-
-<body>
-<h1>Welcome to My Homepage</h1>
-
-<div class="intro">
-<p>My name is Donald.</p>
-<p>I live in Duckburg.</p>
-</div>
-
-<p>My best friend is Mickey.</p>
-
-</body>
-</textarea>
-</article>
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Universal_selectors" target="_blank">Universal Selectors</a>
-</h2>
 <p>
-*<br/>
-Selects all elements
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-div *
-{
-background-color:yellow;
-}
-</style>
-</head>
-<body>
-
-<h1>Welcome to My Homepage</h1>
-
-<div class="intro">
-<p id="firstname">My name is Donald.</p>
-<p id="hometown">I live in Duckburg.</p>
-</div>
-
-<p>My best friend is Mickey.</p>
-
-</body>
-</textarea>
-</article>
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Type_selectors" target="_blank">Type Selectors</a>
-</h2>
-<p>
-p<br/>
-Selects all &lt;p&gt; elements
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-p
-{
-background-color:yellow;
-}
-</style>
-</head>
-<body>
-
-<h1>Welcome to My Homepage</h1>
-
-<div>
-<p id="firstname">My name is Donald.</p>
-<p id="hometown">I live in Duckburg.</p>
-</div>
-
-<p>My best friend is Mickey.</p>
-
-</body>
-</textarea>
-</article>
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>Grouping</h2>
-<p>
+A comma-separated list of selectors represents the union of all elements selected by each of the individual selectors in the list. (A comma is U+002C.) For example, in CSS when several selectors share the same declarations, they may be grouped into a comma-separated list. White space may appear before and/or after the comma.
+<br/>
 div,p<br/>
 Selects all &lt;div&gt; elements and all &lt;p&gt; elements
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-h1,p
-{
-    background-color:yellow;
-}
-/*
-h1{background-color:yellow;}
-p{background-color:yellow;}
+
+h1 { background-color:yellow; }
+p  { background-color:yellow; }
+
+/* is equivalent to:
+h1,p { background-color:yellow; }
+*/
+/* Invalid CSS example:
+h1,p, div%% { background-color:yellow; }
 */
 </style>
 </head>
 <body>
+	<h1>Welcome to My Home</h1>
+	<div>My name is Han soo woong</div>
+	<p>Make yourself at home</p>
+</body>
+</textarea>
+</article>
+
+<article class='slide slide-subhead'>
+<h2>Type of Selectors</h2>
+<h3>Simple selectors</h3>
+	<h5>Type selectors</h5>
+	<h5>Universal selector</h5>
+	<h5>Attribute selectors</h5>
+	<h5>Class selectors</h5>
+	<h5>ID selectors</h5>
+	<h5>Pseudo-classes</h5>
+<h3>Pseudo-elements</h3>
+	<h5>The ::before and ::after pseudo-elements</h5>
+<h3>Combinators</h3>
+	<h5>Descendant combinator</h5>
+	<h5>Child combinators</h5>
+	<h5>Sibling combinators</h5>
+<h3>Groups of selectors</h3>
+</article>
+
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Type_selectors" target="_blank">Simple Selectors - Type Selectors</a>
+</h2>
+<p>
+CSS type selectors match elements by node name. Used alone, therefore, a type selector for a particular node name selects all elements of that type — that is, with that node name — in the document.
+<p>
+
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+p { background-color:yellow; }
+</style>
+</head>
+<body>
+
+<h1>Welcome</h1>
+
+<p id="hometown">This is P element.</p>
+<p id="firstname">
+	<div>This is DIV element in P.</div>
+</p>
+<div>
+	<p>This is P element in DIV.</p>
+</div>
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Universal_selectors" target="_blank">Simple Selectors - Universal Selectors</a>
+</h2>
+<p>
+An Asterisk (*) is the universal selector for CSS. It matches a single element of any type. 
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+
+div * {background-color:yellow;}
+* {color:red;}
+
+</style>
+</head>
+<body>
 
 <h1>Welcome to My Homepage</h1>
 
-<div>
-<p>My name is Donald.</p>
-<p>I live in Duckburg.</p>
+<div class="intro">
+  <p>My name is Donald.</p>
+  <p>I live in Duckburg.</p>
 </div>
 
 <p>My best friend is Mickey.</p>
@@ -262,155 +236,84 @@ p{background-color:yellow;}
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Descendant_selectors" target="_blank">Descendant selectors</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors</a>
 </h2>
 <p>
-div p<br/>
-Selects all &lt;p&gt; elements inside &ltdiv&gt; elements
+Attribute selectors select an element using the presence of a given attribute or attribute value.
 </p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-div p
-{
-    background-color:yellow;
-}
-</style>
-</head>
-<body>
+<p>
+<dl>
+  <dt>[attr]</dt>
+  <dd>Represents an element with an attribute name of attr.</dd>
+  <dt>[attr=value]</dt>
+  <dd>Represents an element with an attribute name of attr and whose value is exactly "value".</dd>
+  <dt>[attr~=value]</dt>
+  <dd>Represents an element with an attribute name of attr whose value is a whitespace-separated list of words, one of which is exactly "value".</dd>
+  <dt>[attr|=value]</dt>
+  <dd>Represents an element with an attribute name of attr whose value is a hyphen-separated list of words, one of which is exactly "value". It can be used for language subcode matches.</dd>
+  <dt>[attr^=value]</dt>
+  <dd>Represents an element with an attribute name of attr and whose value is the prefixed by "value".</dd>
+  <dt>[attr$=value]</dt>
+  <dd>Represents an element with an attribute name of attr and whose value is the suffixed by "value".</dd>
+  <dt>[attr*=value]</dt>
+  <dd>Represents an element with an attribute name of attr and whose value contains at least one occurrence of string "value" as substring.</dd>
+</dl>
+</p>
 
-<h1>Welcome to My Homepage</h1>
-
-<div>
-<h2>My name is Donald</h2>
-<p>I live in Duckburg.</p>
-</div>
-
-<p>My best friend is Mickey.</p>
-
-</body>
-</textarea>
 </article>
+
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Child_selectors" target="_blank">Child selectors</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr]</a>
 </h2>
 <p>
-div > p<br/>
-Selects all &lt;p&gt; elements where the parent is a &lt;div&gt; element
+  <dt>[attr]</dt>
+  <dd>Represents an element with an attribute name of attr.</dd>
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-div > p
-{
-    background-color:yellow;
+
+[target] {
+  background-color:yellow;
 }
+
 </style>
 </head>
-
 <body>
-	<h1>Welcome to My Homepage</h1>
-	<div>
-		<h2>My name is Donald</h2>
-		<p>I live in Duckburg.</p>
-	</div>
-	<div>
-		<span>
-			<p>I will not be styled.</p>
-		</span>
-	</div>
-	<p>My best friend is Mickey.</p>
+
+<a href="http://www.w3schools.com">w3schools.com</a>
+<a href="http://www.w3.org" target="_blank">w3.org</a>
+<a href="http://www.davincisdk.com" target="_top">davinci</a>
+
 </body>
 </textarea>
 </article>
 
-
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Adjacent_sibling_selectors" target="_blank">Adjacent sibling selectors</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr=value]</a>
 </h2>
 <p>
-div + p<br/>
-Selects all &lt;p&gt; elements that are placed immediately after &lt;div&gt; elements
+  <dt>[attr=value]</dt>
+  <dd>Represents an element with an attribute name of attr and whose value is exactly "value".</dd>
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-div + p
-{
-	background-color:yellow;
-}
-</style>
-</head>
-<body>
-	<h1>Welcome to My Homepage</h1>
-	<div>
-		<h2>My name is Donald</h2>
-		<p>I live in Duckburg.</p>
-	</div>
-	<p>My best friend is Mickey.</p>
-	<p>I will not be styled.</p>
-</body>
-</textarea>
-</article>
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Attribute selectors</a>
-</h2>
-<p>
-[target]<br/>
-Selects all elements with a target attribute
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-a[target]
-{
-	background-color:yellow;
-}
-</style>
-</head>
-<body>
-	<p>The links with a target attribute gets a yellow background:</p>
-	<a href="http://www.w3schools.com">w3schools.com</a>
-	<a href="http://www.disney.com" target="_blank">disney.com</a>
-	<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
-</body>
-</textarea>
-</article>
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Attribute selectors</a>
-</h2>
-<p>
-[target=_blank]<br/>
-Selects all elements with target="_blank"
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-a[target=_blank]
-{
+[target=_blank] {
 background-color:yellow;
 }
 </style>
 </head>
 <body>
-	<p>The link with target="_blank" gets a yellow background:</p>
-	<a href="http://www.w3schools.com">w3schools.com</a>
-	<a href="http://www.disney.com" target="_blank">disney.com</a>
-	<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+<a href="http://www.w3schools.com">w3schools.com</a>
+<a href="http://www.disney.com" target="_blank">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
 </body>
 </textarea>
 </article>
@@ -419,26 +322,23 @@ background-color:yellow;
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Attribute selectors</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr~=value]</a>
 </h2>
 <p>
-[title~=flower]<br/>
-Selects all elements with a title attribute containing the word "flower"
+  <dt>[attr~=value]</dt>
+  <dd>Represents an element with an attribute name of attr whose value is a whitespace-separated list of words, one of which is exactly "value".</dd>
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-[title~=flower]
-{
-border:5px solid yellow;
+[title~=soo] {
+  border:5px solid red;
 }
 </style>
 </head>
 <body>
-	<p>The image with the title attribute containing the word "flower" gets a yellow border.</p>
-	<img src="klematis.jpg" title="klematis flower" width="150" height="113" />
-	<img src="img_flwr.gif" title="flowers" width="224" height="162" />
-	<img src="landscape.jpg" title="landscape" width="160" height="120" />
+	<img src="images/itswoong.png" title="han soo woong" width="100" height="100" />
+	<img src="images/davinci.png" title="leonardo davinci" width="100" height="100" />
 </body>
 </textarea>
 </article>
@@ -447,23 +347,25 @@ border:5px solid yellow;
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Attribute selectors</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr|=value]</a>
 </h2>
 <p>
-[lang|=en]<br/>
-Selects all elements with a lang attribute value starting with "en"
+  <dt>[attr|=value]</dt>
+  <dd>Represents an element with an attribute name of attr whose value is a hyphen-separated list of words, one of which is exactly "value". It can be used for language subcode matches.</dd>
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-[lang|=en]
-{
-background:yellow;
+
+[lang|=en] {
+  background:yellow;
 }
+
 </style>
 </head>
 
 <body>
+	<p lang="kr">안녕하세요!</p>
 	<p lang="en">Hello!</p>
 	<p lang="en-us">Hi!</p>
 	<p lang="en-gb">Ello!</p>
@@ -477,26 +379,25 @@ background:yellow;
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Attribute selectors</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr^=value]</a>
 </h2>
 <p>
-a[src^="https"]	<br/>
-Selects every &lt;a&gt; element whose src attribute value begins with "https"	
+  <dt>[attr^=value]</dt>
+  <dd>Represents an element with an attribute name of attr and whose value is the prefixed by "value".</dd>
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-div[class^="test"]
-{
+[class^="test"] {
 background:#ffff00;
 }
 </style>
 </head>
 <body>
-	<div class="first_test">The first div element.</div>
-	<div class="second">The second div element.</div>
-	<div class="test">The third div element.</div>
-	<div class="test">This is some text in a paragraph.</div>
+  <div class="test-first">The first div element.</div>
+  <div class="secondtest">The second div element.</div>
+  <div class="third-test-third">The third div element.</div>
+  <div class="test">This is some text in a paragraph.</div>
 </body>
 </textarea>
 </article>
@@ -507,26 +408,25 @@ background:#ffff00;
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Attribute selectors</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr$=value]</a>
 </h2>
 <p>
-a[src$=".pdf"]	<br/>
-Selects every &lt;a&gt; element whose src attribute value ends with ".pdf"	
+  <dt>[attr$=value]</dt>
+  <dd>Represents an element with an attribute name of attr and whose value is the suffixed by "value".</dd>
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-div[class$="test"]
-{
-background:#ffff00;
+[class$="test"] {
+  background:#ffff00;
 }
 </style>
 </head>
 <body>
-	<div class="first_test">The first div element.</div>
-	<div class="second">The second div element.</div>
-	<div class="test">The third div element.</div>
-	<div class="test">This is some text in a paragraph.</div>
+  <div class="test-first">The first div element.</div>
+  <div class="secondtest">The second div element.</div>
+  <div class="third-test-third">The third div element.</div>
+  <div class="test">This is some text in a paragraph.</div>
 </body>
 </textarea>
 </article>
@@ -537,26 +437,25 @@ background:#ffff00;
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Attribute selectors</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr*=value]</a>
 </h2>
 <p>
-a[src*="w3schools"]	<br/>
-Selects every &lt;a&gt; element whose src attribute value contains the substring "w3schools"	
+  <dt>[attr*=value]</dt>
+  <dd>Represents an element with an attribute name of attr and whose value contains at least one occurrence of string "value" as substring.</dd>
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-div[class*="test"]
-{
-background:#ffff00;
+[class*="test"]{
+  background:#ffff00;
 }
 </style>
 </head>
 <body>
-	<div class="first_test">The first div element.</div>
-	<div class="second">The second div element.</div>
-	<div class="test">The third div element.</div>
-	<div class="test">This is some text in a paragraph.</div>
+  <div class="test-first">The first div element.</div>
+  <div class="secondtest">The second div element.</div>
+  <div class="third-test-third">The third div element.</div>
+  <div class="test">This is some text in a paragraph.</div>
 </body>
 </textarea>
 </article>
@@ -567,27 +466,172 @@ background:#ffff00;
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/ID_selectors" target="_blank">ID Selectors</a>
+</h2>
+<p>In an HTML document, CSS ID selectors match an element based on the contents of that element's ID attribute, which must match exactly the value given in the selector.</p>
+
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+#itswoong {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome</h1>
+
+<div class="intro">
+  <p id="itswoong">My name is Han soo woong.</p>
+  <p id="hometown">I live in Seoul.</p>
+</div>
+
+<p>I'll be back.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Class_selectors" target="_blank">Class Selectors</a>
 </h2>
 <p>
-input:focus<br/>
-Selects the input element which has focus
+In an HTML document, CSS class selectors match an element based on the contents of the element's class attribute. The class attribute is defined as a space-separated list of items, and one of those items must match exactly the class name given in the selector.
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-input:focus
+.first
 {
-	background-color:yellow;
+background-color:yellow;
+}
+</style>
+</head>
+
+<body>
+<h1>Welcome</h1>
+
+<div class="first">
+  <p id="second">My name is Han soo woong.</p>
+  <p>I live in Seoul.</p>
+</div>
+
+<p>I'll be back.</p>
+
+</body>
+</textarea>
+</article>
+
+
+
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:link" target="_blank">Pseudo classes :link</a>
+</h2>
+<p>
+The :link CSS pseudo-class lets you select links inside elements.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+a:link {
+  background-color:yellow;
 }
 </style>
 </head>
 <body>
-	<p>Click inside the text fields to see a yellow background:</p>
-	<form>
-		First name: <input type="text" name="firstname" /><br />
-		Last name: <input type="text" name="lastname" />
-	</form>
+<a href='http://www.davincisdk.com'>DaVinci</a>
+<a >DaVinci</a>
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:visited" target="_blank">Pseudo classes :visited</a>
+</h2>
+<p>
+The :visited CSS pseudo-class lets you select only links that have been visited
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+a:visited {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+<a href='http://www.davincisdk.com'>DaVinci</a>
+<a href='http://www.daum.net'>Daum</a>
+<a href='http://www.naver.com'>Naver</a>
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:visited" target="_blank">Pseudo classes :hover</a>
+</h2>
+<p>
+The :hover CSS pseudo-class matches when the user designates an element with a pointing device, but does not necessarily activate it.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+a:hover {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+<a href='http://www.davincisdk.com'>DaVinci</a>
+<a href='http://www.daum.net'>Daum</a>
+<a href='http://www.naver.com'>Naver</a>
+</body>
+</textarea>
+</article>
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes :focus</a>
+</h2>
+<p>
+The :focus CSS pseudo-class is applied when a element has received focus, either from the user selecting it with the use of a keyboard or by activating with the mouse (e.g. a form input).
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+input:focus {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+  <p>Click inside the text fields to see a yellow background:</p>
+  <form>
+    First name: <input type="text" name="firstname" /><br />
+    Last name: <input type="text" name="lastname" />
+  </form>
 </body>
 </textarea>
 </article>
@@ -596,51 +640,100 @@ input:focus
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes :active</a>
 </h2>
 <p>
-a:active<br/>
-Selects the active link
+The :active CSS pseudo-class matches when an element is being activated by the user.
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-a:active
-{
-	background-color:yellow;
+a:active {
+  background-color:yellow;
 }
 </style>
 </head>
 <body>
-<a href="http://www.w3schools.com">w3schools.com</a>
+
+<a href="http://www.davincisdk.com">DaVinci</a>
 <a href="http://www.wikipedia.org">wikipedia.org</a>
+
 </body>
 </textarea>
 </article>
 
 
+
+
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-elements" target="_blank">Pseudo elements</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:first-child" target="_blank">Pseudo classes :first-child</a>
 </h2>
 <p>
-p::before<br/>
-Insert content before  the content of every &lt;p&gt; element
+The :first-child CSS pseudo-class represents any element that is the first child element of its parent.
 </p>
 <textarea class='coder-editor'>
 <head>
-<style type="text/css">
-p::before
-{
-	content:"Read this -";
-	color:red;
+<style type="text/css"> 
+p:first-child {
+  background:yellow;
 }
 </style>
 </head>
 <body>
-	<p>My name is Donald</p>
-	<p>I live in Ducksburg</p>
+<div>
+  <p>The first paragraph.</p>
+  <h1>This is a heading</h1>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+<hr>
+<div>
+  <h1>This is a heading</h1>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:last-child" target="_blank">Pseudo classes :last-child</a>
+</h2>
+<p>
+The :last-child CSS pseudo-class represents any element that is the last child element of its parent.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:last-child {
+  background:yellow;
+}
+</style>
+</head>
+<body>
+<div>
+  <p>The first paragraph.</p>
+  <h1>This is a heading</h1>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+<hr>
+<div>
+  <h1>This is a heading</h1>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
 </body>
 </textarea>
 </article>
@@ -650,97 +743,589 @@ p::before
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-elements" target="_blank">Pseudo elements</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:nth-child" target="_blank">Pseudo classes :nth-child</a>
 </h2>
 <p>
-p::after<br/>
-Insert content after every &lt;p&gt; element	
+The :nth-child CSS pseudo-class matches an element that has an+b-1 siblings before it in the document tree, for a given positive or zero value for n, and has a parent element.
 </p>
 <textarea class='coder-editor'>
 <head>
-<style type="text/css">
+<style type="text/css"> 
+p:nth-child(2n+1) {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <p>The first paragraph.</p>
+  <h1>This is a heading</h1>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+<hr>
+<div>
+  <h1>This is a heading</h1>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:nth-last-child" target="_blank">Pseudo classes :nth-last-child</a>
+</h2>
+<p>
+The :nth-last-child CSS pseudo-class matches an element that has an+b-1 siblings after it in the document tree, for a given positive or zero value for n, and has a parent element. See :nth-child for a more thorough description of the syntax of its argument.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:nth-last-child(-n+2) {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <h1>This is a heading</h1>
+  <p>The fourth paragraph.</p>
+</div>
+<hr>
+<div>
+  <h1>This is a heading</h1>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:nth-of-type" target="_blank">Pseudo classes :nth-of-type</a>
+</h2>
+<p>
+The :nth-of-type CSS pseudo-class matches an element that has an+b-1 siblings with the same element name before it in the document tree, for a given positive or zero value for n, and has a parent element. See :nth-child for a more thorough description of the syntax of its argument. This is a more flexible and useful pseudo selector if you want to ensure you're selecting the same type of tag no matter where it is inside the parent element, or what other different tags appear before it.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:nth-of-type(2n+1) {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+<div>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+<hr>
+<div>
+  <p>The first paragraph.</p>
+  <h1>This is a heading</h1>
+  <h1>This is a heading</h1>
+  <h1>This is a heading</h1>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:nth-last-of-type" target="_blank">Pseudo classes :nth-last-of-type</a>
+</h2>
+<p>
+The :nth-last-of-type CSS pseudo-class matches an element that has an+b-1 siblings with the same element name after it in the document tree, for a given positive or zero value for n, and has a parent element. See :nth-child for a more thorough description of the syntax of its argument.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:nth-last-of-type(2) {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+<div>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+<hr>
+<div>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <h1>This is a heading</h1>
+  <h1>This is a heading</h1>
+  <p>The fourth paragraph.</p>
+</div>
+</body>
+</textarea>
+</article>
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:first-of-type" target="_blank">Pseudo classes :first-of-type</a>
+</h2>
+<p>
+The :first-of-type CSS pseudo-class represents the first sibling of the given type in the list of children of its parent element.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:first-of-type {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <p>The first paragraph.</p>
+  <h1>This is a heading</h1>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+<hr>
+<div>
+  <h1>This is a heading</h1>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:last-of-type" target="_blank">Pseudo classes :last-of-type</a>
+</h2>
+<p>
+The :last-of-type CSS pseudo-class represents the last sibling of the given type in the list of children of its parent element.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:last-of-type {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+  <h1>This is a heading</h1>
+</div>
+<hr>
+<div>
+  <h1>This is a heading</h1>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:only-child" target="_blank">Pseudo classes :only-child</a>
+</h2>
+<p>
+The :only-child CSS pseudo-class represents any element which is the only child of its parent. This is the same as :first-child:last-child or :nth-child(1):nth-last-child(1), but with a lower specificity.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:only-child {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <p>The first paragraph.</p>
+</div>
+<hr>
+<div>
+  <p>The first paragraph.</p>
+  <h1>This is a heading</h1>
+</div>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:only-of-type" target="_blank">Pseudo classes :only-of-type</a>
+</h2>
+<p>
+The :only-of-type CSS pseudo-class represents any element that has no siblings of the given type.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:only-of-type {
+  background-color:yellow;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <p>The first paragraph.</p>
+  <h1>This is a heading</h1>
+</div>
+<hr>
+<div>
+  <p>The first paragraph.</p>
+  <h1>This is a heading</h1>
+  <p>The first paragraph.</p>
+</div>
+
+</body>
+</textarea>
+</article>
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:empty" target="_blank">Pseudo classes :empty</a>
+</h2>
+<p>
+The :empty pseudo-class represents any element that has no children at all. Only element nodes and text (including whitespace) are considered. Comments or processing instructions do not affect whether an element is considered empty or not.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+.box {
+  background: red;
+  height: 200px;
+  width: 200px;
+  border: 2px solid black;
+  margin: 5px;
+}
+.box:empty {
+  background-color:lime;
+}
+</style>
+</head>
+<body>
+
+<div class="box"><!-- I will be lime --></div>
+<div class="box">I will be red</div>
+
+</body>
+</textarea>
+</article>
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:target" target="_blank">Pseudo classes :target</a>
+</h2>
+<p>
+The :target pseudo-class represents the unique element, if any, with an id matching the fragment identifier of the URI of the document.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+#comment1,  #comment2{
+  display: none;
+}
+#comment1:target, #comment2:target {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<p><a href="#comment1">show a comment1</a></p>
+<p><a href="#comment2">show a comment2</a></p>
+<div id="comment1">This is a comment1</div>
+<div id="comment2">This is a comment2</div>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:checked" target="_blank">Pseudo classes :checked</a>
+</h2>
+<p>
+The :checked CSS pseudo-class selector represents any radio (&lt;input type="radio"&gt;), checkbox (&lt;input type="checkbox"&gt;) or option (&lt;option&gt; in a &lt;select&gt;) element that is checked or toggled to an on state.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+input:checked {
+	display: none;
+}
+</style>
+</head>
+<body>
+
+<form>
+<input type="radio" name="sex" value="male">Male<br>
+<input type="radio" name="sex" value="female">Female
+</form>
+
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:enabled" target="_blank">Pseudo classes :enabled</a>
+</h2>
+<p>
+The :enabled CSS pseudo-class represents any enabled element. An element is enabled if it can be activated (e.g. selected, clicked on or accept text input) or accept focus.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+input:enabled {
+  background-color: red;
+}
+</style>
+</head>
+<body>
+
+<form>
+disabled<input type="text" disabled="disabled"><br>
+enabled<input type="password" >
+</form>
+
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:disabled" target="_blank">Pseudo classes :disabled</a>
+</h2>
+<p>
+The :disabled CSS pseudo-class represents any disabled element. An element is disabled if it can't be activated (e.g. selected, clicked on or accept text input) or accept focus
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+input:disabled {
+  background-color: red;
+}
+</style>
+</head>
+<body>
+
+<form>
+disabled<input type="text" disabled="disabled"><br>
+enabled<input type="password" >
+</form>
+
+</body>
+</textarea>
+</article>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:not" target="_blank">Pseudo classes :not</a>
+</h2>
+<p>
+The :disabled CSS pseudo-class represents any disabled element. An element is disabled if it can't be activated (e.g. selected, clicked on or accept text input) or accept focus
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+
+p:not(.classy) {
+  color: red;
+}
+
+</style>
+</head>
+<body>
+
+<p class="woong">Some text.</p>
+<p class="classy">Some other text.</p>
+<p>One more text<p>
+
+
+</body>
+</textarea>
+</article>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/::after" target="_blank">Pseudo element ::after</a>
+</h2>
+<p>
+The CSS :after pseudo-element matches a virtual last child of the selected element. Typically used to add cosmetic content to an element, by using the content CSS property. This element is inline by default.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
 p::after
 { 
 	content:"- Remember this";
 	color:red;
 }
+
 </style>
 </head>
-
 <body>
-	<p>My name is Donald</p>
-	<p>I live in Ducksburg</p>
+
+<p>My name is Han soo woong</p>
+<p>I live in Ducksburg</p>
+
+
 </body>
 </textarea>
+</article>
 </article>
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
-
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/General_sibling_selectors" target="_blank">General sibling selectors</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:before" target="_blank">Pseudo element ::before</a>
 </h2>
 <p>
-p ~ ul<br/>
-Selects every &lt;ul&gt; element that are preceded by a &lt;p&gt; element	
+:before creates a pseudo-element that is the first child of the element matched. Often used to add cosmetic content to an element, by using the content property. This element is inline by default.
 </p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p ~ ul
-{
-	background:#ff0000;
+q:before { 
+  content: '"' ;
+  color: red;
+}
+q:after { 
+  content: '"' ;
+  color: blue;
 }
 </style>
 </head>
 <body>
-	<div>A div element.</div>
-	<ul>
-		<li>Coffee</li>
-		<li>Tea</li>
-	</ul>
-	<p>The first paragraph.</p>
-	<ul>
-		<li>Coffee</li>
-		<li>Tea</li>
-	</ul>
-	<h2>Another list</h2>
-	<ul>
-		<li>Coffee</li>
-		<li>Tea</li>
-	</ul>
+
+<q>Han soo Woong</q>
+is
+<q>ood</q>
+man.
+
 </body>
 </textarea>
 </article>
+</article>
+
+
+
+<article class='slide slide-subhead'>
+<h2>Combinators</h2>
+<h3>Descendant combinator</h3>
+<h3>Child combinators</h3>
+<h3>Sibling combinators</h3>
+	<h5>Adjacent sibling combinator</h5>
+	<h5>General sibling combinator</h5>
+</article>
+
+
 
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Descendant_selectors" target="_blank">Combinators - Descendant selectors</a>
 </h2>
 <p>
-p:first-of-type	<br/>
-Selects every &lt;p&gt; element that is the first &lt;p&gt; element of its parent	
+The ' ' combinator (that's meant to represent a space, or more properly one or more whitespace characters) combines two selectors such that the combined selector matches only those elements matching the second selector for which there is an ancestor element matching the first selector.
+
 </p>
+<p>
+<div class="style-syntax">selector1 selector2 { style properties }</div>
+</p>
+
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p:first-of-type
-{
-background:#ff0000;
+div p {
+  background-color:DodgerBlue;
 }
 </style>
 </head>
 <body>
 
-<h1>This is a heading</h1>
-<p>The first paragraph.</p>
-<p>The second paragraph.</p>
-<p>The third paragraph.</p>
-<p>The fourth paragraph.</p>
+<div>
+  <p>한과장</p>
+</div>
+<p>정과장</p>
 
 </body>
 </textarea>
@@ -748,32 +1333,34 @@ background:#ff0000;
 
 
 
-
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/child_selectors" target="_blank">Combinators - Child selectors</a>
 </h2>
 <p>
-p:last-of-type	<br/>
-Selects every &lt;p&gt; element that is the last &lt;p&gt; element of its parent	 
+The > combinator separates two selectors and matches only those elements matched by the second selector that are direct children of elements matched by the first
 </p>
+<p>
+<div class="style-syntax">selector1 > selector2 { style properties }</div>
+</p>
+
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p:last-of-type
-{
-background:#ff0000;
+div > p {
+  background-color:DodgerBlue;
 }
 </style>
 </head>
 <body>
 
-<h1>This is a heading</h1>
-<p>The first paragraph.</p>
-<p>The second paragraph.</p>
-<p>The third paragraph.</p>
-<p>The fourth paragraph.</p>
+<div>
+  <p>정과장</p>
+  <b>
+    <p>한과장</p>
+  </b>
+</div>
 
 </body>
 </textarea>
@@ -781,417 +1368,245 @@ background:#ff0000;
 
 
 
-
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Adjacent_sibling_selectors" target="_blank">Combinators - Adjacent sibling selectors</a>
 </h2>
 <p>
-p:only-of-type	<br/>
-Selects every &lt;p&gt; element that is the only &lt;p&gt; element of its parent	
+This is referred to as an adjacent selector. It will select only the element that is immediately preceded by the former element.
 </p>
+<p>
+<div class="style-syntax">former_element + target_element { style properties }</div>
+</p>
+
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p:only-of-type
-{
-background:#ff0000;
+#three + li {
+  color: red;
 }
 </style>
 </head>
 <body>
 
-<div><p>This is a paragraph.</p></div>
-
-<div><p>This is a paragraph.</p><p>This is a paragraph.</p></div>
+<ul>
+  <li>One</li>
+  <li>Two</li>
+  <li id="three">Three</li>
+  <li>Four</li>
+  <li>Five</li>
+</ul>
 
 </body>
 </textarea>
 </article>
 
 
-
-
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/General_sibling_selectors" target="_blank">Combinators - General sibling selectors</a>
 </h2>
 <p>
-p:only-child	<br/>
-Selects every &lt;p&gt; element that is the only child of its parent	
+The ~ combinator separates two selectors and matches the second element only if it is preceded by the first, and both share a common parent.
 </p>
+<p>
+<div class="style-syntax">element ~ element { style properties } { style properties }</div>
+</p>
+
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p:only-child
-{
-background:#ff0000;
+#three ~ li {
+  color: red;
 }
 </style>
 </head>
 <body>
 
-<div><p>This is a paragraph.</p></div>
-
-<div><span>This is a span.</span><p>This is a paragraph.</p></div>
-
-<p><b>Note:</b> Internet Explorer does not support the :only-child selector.</p>
+<ul>
+  <li>One</li>
+  <li>Two</li>
+  <li id="three">Three</li>
+  <li>Four</li>
+  <li>Five</li>
+</ul>
 
 </body>
 </textarea>
 </article>
 
 
-
-
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/Specificity" target="_blank">specificity</a>
 </h2>
 <p>
-p:nth-child(2)	<br/>
-Selects every &lt;p&gt; element that is the second child of its parent	
+Specificity is the means by which a browser decides which property values are the most relevant to an element and gets to be applied. Specificity is only based on the matching rules which are composed of selectors of different sorts.
 </p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css"> 
-p:nth-child(2)
-{
-background:#ff0000;
-}
-</style>
-</head>
-<body>
-
-<h1>This is a heading</h1>
-<p>The first paragraph.</p>
-<p>The second paragraph.</p>
-<p>The third paragraph.</p>
-<p>The fourth paragraph.</p>
-
-<p><b>Note:</b> Internet Explorer does not support the :nth-child() selector.</p>
-
-</body>
-</textarea>
+<p>
+The following list of selectors is by increasing specificity:
+</p>
+<ul>
+<li>Universal selectors</li>
+<li>Type selectors</li>
+<li>Class selectors</li>
+<li>Attributes selectors</li>
+<li>Pseudo-classes</li>
+<li>ID selectors</li>
+<li>Inline style</li>
+</ul>
 </article>
-
-
-
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="http://www.w3.org/TR/selectors/#specificity" target="_blank">Calculating a selector's specificity</a>
 </h2>
 <p>
-p:nth-last-child(2)	<br/>
-Selects every &lt;p&gt; element that is the second child of its parent, counting from the last child	
+A selector's specificity is calculated as follows:
 </p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css"> 
-p:nth-last-child(2)
-{
-background:#ff0000;
-}
-</style>
-</head>
-<body>
-
-<p>The first paragraph.</p>
-<p>The second paragraph.</p>
-<p>The third paragraph.</p>
-<p>The fourth paragraph.</p>
-
-<p><b>Note:</b> Internet Explorer does not support the :nth-last-child() selector.</p>
-
-</body>
-</textarea>
-</article>
-
-
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
-</h2>
+<ul>
+<li>count the number of ID selectors in the selector (= a)</li>
+<li>count the number of class selectors, attributes selectors, and pseudo-classes in the selector (= b)</li>
+<li>count the number of type selectors and pseudo-elements in the selector (= c)</li>
+<li>ignore the universal selector</li>
+</ul>
 <p>
-p:nth-of-type(2)	<br/>
-Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent	
+Selectors inside the negation pseudo-class are counted like any other, but the negation itself does not count as a pseudo-class.
 </p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css"> 
-p:nth-of-type(2)
-{
-background:#ff0000;
-}
-</style>
-</head>
-<body>
-
-<h1>This is a heading</h1>
-<p>The first paragraph.</p>
-<p>The second paragraph.</p>
-<p>The third paragraph.</p>
-<p>The fourth paragraph.</p>
-
-</body>
-</textarea>
-</article>
-
-
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
-</h2>
 <p>
-p:nth-last-of-type(2)	<br/>
-Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent, counting from the last child	
+Concatenating the three numbers a-b-c (in a number system with a large base) gives the specificity.
 </p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css"> 
-p:nth-last-of-type(2)
-{
-background:#ff0000;
-}
-</style>
-</head>
-<body>
-
-<h1>This is a heading</h1>
-<p>The first paragraph.</p>
-<p>The second paragraph.</p>
-<p>The third paragraph.</p>
-<p>The fourth paragraph.</p>
-
-<p><b>Note:</b> Internet Explorer does not support the :nth-last-of-type() selector.</p>
-
-</body>
-</textarea>
+Examples:
+<pre>
+*               /* a=0 b=0 c=0 -> specificity =   0 */
+LI              /* a=0 b=0 c=1 -> specificity =   1 */
+UL LI           /* a=0 b=0 c=2 -> specificity =   2 */
+UL OL+LI        /* a=0 b=0 c=3 -> specificity =   3 */
+H1 + *[REL=up]  /* a=0 b=1 c=1 -> specificity =  11 */
+UL OL LI.red    /* a=0 b=1 c=3 -> specificity =  13 */
+LI.red.level    /* a=0 b=2 c=1 -> specificity =  21 */
+#x34y           /* a=1 b=0 c=0 -> specificity = 100 */
+#s12:not(FOO)   /* a=1 b=0 c=1 -> specificity = 101 */
+</pre>
 </article>
-
 
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/General_sibling_selectors" target="_blank">Calculating a selector's specificity : sample (1)</a>
 </h2>
-<h3>:last-child</h3>
-<h6>p:last-child</h6>
-Selects every &lt;p&gt; element that is the last child of its parent	<br>
-</p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p:last-child
-{
-background:#ff0000;
+ul li{
+  background-color: pink;
+}
+ul li{
+  background-color: green;
 }
 </style>
 </head>
 <body>
 
-<p>The first paragraph.</p>
-<p>The second paragraph.</p>
-<p>The third paragraph.</p>
-<p>The fourth paragraph.</p>
+<ul>
+  <li id=one>One</li>
+  <li class="two second">Two</li>
+  <li id="three" class="three third">Three</li>
+  <li data-name="four">Four</li>
+  <li>Five</li>
+</ul>
 
 </body>
 </textarea>
 </article>
 
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/General_sibling_selectors" target="_blank">Calculating a selector's specificity : sample (2)</a>
+</h2>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+#three {
+  background-color: aqua;
+}
+.two {
+  background-color: pink;
+}
+li {
+  background-color: green;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li id=one>One</li>
+  <li class="two second">Two</li>
+  <li id="three" class="two three third">Three</li>
+  <li data-name="four">Four</li>
+  <li>Five</li>
+</ul>
+
+</body>
+</textarea>
+</article>
 
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/General_sibling_selectors" target="_blank">Calculating a selector's specificity : sample (3)</a>
 </h2>
-<h3>:empty</h3>
-<h6>p:empty</h6>
-Selects every &lt;p&gt; element that has no children (including text nodes)	
-</p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p:empty
-{
-width:100px;
-height:20px;
-background:#ff0000;
+#three {
+  background-color: aqua;
+}
+.two {
+  background-color: pink;
+}
+li {
+  background-color: green !important;
 }
 </style>
 </head>
 <body>
 
-<p></p>
-<p>A paragraph.</p>
-<p>Another paragraph.</p>
+<ul>
+  <li id=one>One</li>
+  <li class="two second">Two</li>
+  <li id="three" class="two three third">Three</li>
+  <li data-name="four">Four</li>
+  <li>Five</li>
+</ul>
 
 </body>
 </textarea>
 </article>
-
-
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
-</h2>
-<h3>:enabled</h3>
-<h6>input:enabled</h6>
-Selects every enabled &lt;input&gt; element	
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css"> 
-input[type="text"]:enabled
-{
-background:#ffff00;
-}
-input[type="text"]:disabled
-{
-background:#dddddd;
-}
-</style>
-</head>
-<body>
-
-<form action="">
-First name: <input type="text" value="Mickey" /><br />
-Last name: <input type="text" value="Mouse" /><br />
-Country: <input type="text" disabled="disabled" value="Disneyland" /><br />
-</form>
-
-</body>
-</textarea>
-</article>
-
-
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
-</h2>
-<h3>:disabled</h3>
-<h6>input:disabled</h6>
-Selects every disabled &lt;input&gt; element	
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css"> 
-input[type="text"]:enabled
-{
-background:#ffff00;
-}
-input[type="text"]:disabled
-{
-background:#dddddd;
-}
-</style>
-</head>
-<body>
-
-<form action="">
-First name: <input type="text" value="Mickey" /><br />
-Last name: <input type="text" value="Mouse" /><br />
-Country: <input type="text" disabled="disabled" value="Disneyland" /><br />
-</form>
-
-</body>
-</textarea>
-</article>
-
-
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/Pseudo-classes" target="_blank">Pseudo classes</a>
-</h2>
-<h3>:not(selector)</h3>
-<h6>:not(p)</h6>
-Selects every element that is not a &lt;p&gt; element	
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css">
-p
-{
-color:#000000;
-}
-:not(p)
-{
-color:#ff0000;
-}
-</style>
-</head>
-<body>
-
-<h1>This is a heading</h1>
-
-<p>This is a paragraph.</p>
-<p>This is another paragraph.</p>
-
-<div>This is some text in a div element.</div>
-
-<a href="http://www.w3schools.com" target="_blank">Link to W3Schools!</a>
-
-</body>
-</textarea>
-</article>
-
-
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>id</h2>
-<p>
-firstname<br/>
-Selects
-</p>
-<textarea class='coder-editor'>
-
-</textarea>
-</article>
-
-
 
 
 <article class='slide slide-subhead'>
 <h1>reference site</h1>
-<h2><a href='http://github.com/cykod/CoderDeck'>http://github.com/cykod/CoderDeck</a></h2>
-<h2><a href='http://www.quirksmode.org/mobile/'>http://www.quirksmode.org/mobile/</a></h2>
-<h2><a href='https://developer.mozilla.org/'>https://developer.mozilla.org/</a></h2>
-
+<h2><a href='http://www.w3.org/TR/selectors/'>W3C - Selectors Level 3</a></h2>
+<h2><a href='https://developer.mozilla.org/en-US/docs/CSS/CSS_Reference'>MDN - CSS reference</a></h2>
+<h2><a href='http://github.com/cykod/CoderDeck'>CoderDeck on GitHub</a></h2>
+<h2><a href='https://github.com/itswoong/CSSSelectorsWithCoderdeck'>Fork This reference on GitHub</a></h2>
 </article>
-
 
 <article class='slide slide-subhead'>
-<h1>감사합니다.</h1>
+<h1>Thank you</h1>
 </article>
-
-
-
 
 
 

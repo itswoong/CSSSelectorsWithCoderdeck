@@ -29,6 +29,12 @@
 		font-weight: bold;
 		font-size: 17px;
 	}
+	.deck-container .style-syntax2 {
+		font-family: "굴림";
+		font-weight: bold;
+		font-size: 17px;
+		color: blue;
+	}
 	</style>
 
 	<script src='lib/jquery.min.js'></script>
@@ -101,6 +107,44 @@
 </textarea>
 </article>
 
+<!-- Apply a class of "coder-editor-full" along with "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>사전 지식</h2>
+<p>id & class</p>
+
+<textarea class='coder-editor coder-editor-full'>
+<head>
+<style type="text/css">
+#한수웅 {
+	position:absolute;
+	left:300px;	top:200px;	width:150px;	height:200px;
+	background-image:url(http://58.102.122.183/~itswoong/seminar/selectors/images/itswoong.png);
+}
+.정우성:before  { 
+	position:absolute;
+	content: "";
+	background-image:url(http://c.ask.nate.com/imgs/qrsi.php/8933271/11975231/0/1/A/%EC%A0%95%EC%9A%B0%EC%84%B1.jpg);
+	left: -200px;	width: 200px;	height: 200px;	background-size: 100% 100%;
+}
+.장동건:after  { 
+	position:absolute;
+	content:"";
+	background-image:url(http://korean.cri.cn/mmsource/images/2008/07/08/ei080627126.jpg);
+	right: -200px;	width: 200px;	height: 200px;	background-size: 100% 100%;
+}
+
+</style>
+</head>
+<body>
+  <h1>누구세요?</h1>
+  <p id="name">이름 : 한수웅</p>
+  <p id="team">소속 : Framework 개발팀</p>
+  <div id="한수웅" class="정우성 장동건"></div>
+</body>
+
+  
+</textarea>
+</article>
 
 <!-- Apply a class of "coder-editor-full" along with "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
@@ -108,59 +152,60 @@
 <a href="http://www.w3.org/TR/selectors" target="_blank">Selectors</a>
 </h2>
 <p>Selectors are patterns that match against elements in a tree, and as such form one of several technologies that can be used to select nodes in an XML document. Selectors have been optimized for use with HTML and XML, and are designed to be usable in performance-critical code.</p>
-<p>CSS (Cascading Style Sheets) is a language for describing the rendering of HTML and XML documents on screen, on paper, in speech, etc. CSS uses Selectors for binding style properties to elements in the document.</p>
-
-</article>
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>Groups of selectors</h2>
-
-<p>
-A comma-separated list of selectors represents the union of all elements selected by each of the individual selectors in the list. (A comma is U+002C.) For example, in CSS when several selectors share the same declarations, they may be grouped into a comma-separated list. White space may appear before and/or after the comma.
-<br/>
-div,p<br/>
-Selects all &lt;div&gt; elements and all &lt;p&gt; elements
-</p>
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-
-h1 { background-color:yellow; }
-p  { background-color:yellow; }
-
-/* is equivalent to:
-h1,p { background-color:yellow; }
-*/
-/* Invalid CSS example:
-h1,p, div%% { background-color:yellow; }
-*/
+a { background-color:yellow; }
 </style>
 </head>
 <body>
-	<h1>Welcome to My Home</h1>
-	<div>My name is Han soo woong</div>
-	<p>Make yourself at home</p>
+<header id="header1" test-attr="true">
+  <h1>DaVinci</h1>
+  <p id="testid">Make a New World in HTML5 width DaVinci</p>
+  <nav data-role="navigation"><ul>
+    <li><a href='http://www.davincisdk.com/'>DaVinci</a></li>
+    <li><a href='http://forum.davincisdk.com/'>Forum</a></li>
+  </ul></nav>
+</header>
+
+<section id='content'>
+  <article class='blog-post'>
+    <h1>What is DaVinci?</h1>
+    <p id="testid">HTML5 biz App Development</p>
+    <p class="media" >Create Rich Media Contents</p>
+    <p>Work Flow Tools</p>
+  </article>
+</section>
+<footer class="footer">
+  <div>
+	<p class="copyright">
+		 Copyright © 2012 Incross. All rights reserved.
+	</p>
+  </div>
+</footer>	
 </body>
 </textarea>
 </article>
 
+
+
+
 <article class='slide slide-subhead'>
 <h2>Type of Selectors</h2>
 <h3>Simple selectors</h3>
-	<h5>Type selectors</h5>
-	<h5>Universal selector</h5>
-	<h5>Attribute selectors</h5>
-	<h5>Class selectors</h5>
-	<h5>ID selectors</h5>
-	<h5>Pseudo-classes</h5>
+	<h5>Type selectors <b class="style-syntax2">elementname</b></h5>
+	<h5>Universal selector <b class="style-syntax2">*</b></h5>
+	<h5>Attribute selectors <b class="style-syntax2">[attr=value]</b></h5>
+	<h5>Class selectors <b class="style-syntax2">.classname</b></h5>
+	<h5>ID selectors <b class="style-syntax2">#idname</b></h5>
+	<h5>Pseudo-classes <b class="style-syntax2">:</b></h5>
 <h3>Pseudo-elements</h3>
 	<h5>The ::before and ::after pseudo-elements</h5>
 <h3>Combinators</h3>
-	<h5>Descendant combinator</h5>
-	<h5>Child combinators</h5>
-	<h5>Sibling combinators</h5>
+	<h5>Descendant selectors <b class="style-syntax2">A B</b></h5>
+	<h5>Child selectors <b class="style-syntax2">A > B</b></h5>
+	<h5>Adjacent sibling selectors <b class="style-syntax2">A + B</b></h5>
+	<h5>General sibling selectors <b class="style-syntax2">A ~ B</b></h5>
 <h3>Groups of selectors</h3>
 </article>
 
@@ -185,15 +230,12 @@ p { background-color:yellow; }
 </head>
 <body>
 
-<h1>Welcome</h1>
+<h1>This is a H1 element</h1>
+<p>This is a P element.</p>
+<div>This is a DIV element</div>
+<p>This is a P element.</p>
+<div>This is a DIV element</div>
 
-<p id="hometown">This is P element.</p>
-<p id="firstname">
-	<div>This is DIV element in P.</div>
-</p>
-<div>
-	<p>This is P element in DIV.</p>
-</div>
 </body>
 </textarea>
 </article>
@@ -212,21 +254,23 @@ An Asterisk (*) is the universal selector for CSS. It matches a single element o
 <head>
 <style type="text/css">
 
-div * {background-color:yellow;}
 * {color:red;}
+/*
+div * {background-color:yellow;}
+*/
 
 </style>
 </head>
 <body>
 
-<h1>Welcome to My Homepage</h1>
+<h1>Welcome</h1>
 
-<div class="intro">
-  <p>My name is Donald.</p>
-  <p>I live in Duckburg.</p>
+<div>
+  <p>My name is han soo woong.</p>
+  <p>I live in seoul.</p>
 </div>
 
-<p>My best friend is Mickey.</p>
+<p>Good luck!!</p>
 
 </body>
 </textarea>
@@ -277,17 +321,28 @@ Attribute selectors select an element using the presence of a given attribute or
 <head>
 <style type="text/css">
 
-[target] {
-  background-color:yellow;
-}
+[lang] {color:red;}
 
 </style>
 </head>
 <body>
 
-<a href="http://www.w3schools.com">w3schools.com</a>
-<a href="http://www.w3.org" target="_blank">w3.org</a>
-<a href="http://www.davincisdk.com" target="_top">davinci</a>
+<div class="hello-example">
+    <a href="http://example.com">English:</a>
+    <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+</div>
+<div class="hello-example">
+    <a href="#portuguese">Portuguese:</a>
+    <span lang="pt">Olá Mundo!</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Simplified):</a>
+    <span lang="zh-CN">世界您好！</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Traditional):</a>
+    <span lang="zh-TW">世界您好！</span>
+</div>
 
 </body>
 </textarea>
@@ -305,15 +360,30 @@ Attribute selectors select an element using the presence of a given attribute or
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-[target=_blank] {
-background-color:yellow;
-}
+
+span[lang="pt"] {color:red;}
+
 </style>
 </head>
 <body>
-<a href="http://www.w3schools.com">w3schools.com</a>
-<a href="http://www.disney.com" target="_blank">disney.com</a>
-<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+<div class="hello-example">
+    <a href="http://example.com">English:</a>
+    <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+</div>
+<div class="hello-example">
+    <a href="#portuguese">Portuguese:</a>
+    <span lang="pt">Ola Mundo!</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Simplified):</a>
+    <span lang="zh-CN">世界?好！</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Traditional):</a>
+    <span lang="zh-TW">世界?好！</span>
+</div>
+
 </body>
 </textarea>
 </article>
@@ -331,14 +401,30 @@ background-color:yellow;
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-[title~=soo] {
-  border:5px solid red;
-}
+
+span[lang~="en-us"] {color: red;}
+
 </style>
 </head>
 <body>
-	<img src="images/itswoong.png" title="han soo woong" width="100" height="100" />
-	<img src="images/davinci.png" title="leonardo davinci" width="100" height="100" />
+
+<div class="hello-example">
+    <a href="http://example.com">English:</a>
+    <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+</div>
+<div class="hello-example">
+    <a href="#portuguese">Portuguese:</a>
+    <span lang="pt">Ola Mundo!</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Simplified):</a>
+    <span lang="zh-CN">世界?好！</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Traditional):</a>
+    <span lang="zh-TW">世界?好！</span>
+</div>
+
 </body>
 </textarea>
 </article>
@@ -357,20 +443,29 @@ background-color:yellow;
 <head>
 <style type="text/css">
 
-[lang|=en] {
-  background:yellow;
-}
+span[lang|="zh"] {color: red;}
 
 </style>
 </head>
-
 <body>
-	<p lang="kr">안녕하세요!</p>
-	<p lang="en">Hello!</p>
-	<p lang="en-us">Hi!</p>
-	<p lang="en-gb">Ello!</p>
-	<p lang="us">Hi!</p>
-	<p lang="no">Hei!</p>
+
+<div class="hello-example">
+    <a href="http://example.com">English:</a>
+    <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+</div>
+<div class="hello-example">
+    <a href="#portuguese">Portuguese:</a>
+    <span lang="pt">Ola Mundo!</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Simplified):</a>
+    <span lang="zh-CN">世界?好！</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Traditional):</a>
+    <span lang="zh-TW">世界?好！</span>
+</div>
+
 </body>
 </textarea>
 </article>
@@ -387,17 +482,31 @@ background-color:yellow;
 </p>
 <textarea class='coder-editor'>
 <head>
-<style type="text/css"> 
-[class^="test"] {
-background:#ffff00;
-}
+<style type="text/css">
+
+a[href^="#"] {color:red}
+
 </style>
 </head>
 <body>
-  <div class="test-first">The first div element.</div>
-  <div class="secondtest">The second div element.</div>
-  <div class="third-test-third">The third div element.</div>
-  <div class="test">This is some text in a paragraph.</div>
+
+<div class="hello-example">
+    <a href="http://example.com">English:</a>
+    <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+</div>
+<div class="hello-example">
+    <a href="#portuguese">Portuguese:</a>
+    <span lang="pt">Ola Mundo!</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Simplified):</a>
+    <span lang="zh-CN">世界?好！</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Traditional):</a>
+    <span lang="zh-TW">世界?好！</span>
+</div>
+
 </body>
 </textarea>
 </article>
@@ -416,17 +525,31 @@ background:#ffff00;
 </p>
 <textarea class='coder-editor'>
 <head>
-<style type="text/css"> 
-[class$="test"] {
-  background:#ffff00;
-}
+<style type="text/css">
+
+a[href$=".cn"] {color: red;}
+
 </style>
 </head>
 <body>
-  <div class="test-first">The first div element.</div>
-  <div class="secondtest">The second div element.</div>
-  <div class="third-test-third">The third div element.</div>
-  <div class="test">This is some text in a paragraph.</div>
+
+<div class="hello-example">
+    <a href="http://example.com">English:</a>
+    <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+</div>
+<div class="hello-example">
+    <a href="#portuguese">Portuguese:</a>
+    <span lang="pt">Ola Mundo!</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Simplified):</a>
+    <span lang="zh-CN">世界?好！</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Traditional):</a>
+    <span lang="zh-TW">世界?好！</span>
+</div>
+
 </body>
 </textarea>
 </article>
@@ -445,17 +568,31 @@ background:#ffff00;
 </p>
 <textarea class='coder-editor'>
 <head>
-<style type="text/css"> 
-[class*="test"]{
-  background:#ffff00;
-}
+<style type="text/css">
+
+a[href*="example"] {color: red;}
+
 </style>
 </head>
 <body>
-  <div class="test-first">The first div element.</div>
-  <div class="secondtest">The second div element.</div>
-  <div class="third-test-third">The third div element.</div>
-  <div class="test">This is some text in a paragraph.</div>
+
+<div class="hello-example">
+    <a href="http://example.com">English:</a>
+    <span lang="en-us en-gb en-au en-nz">Hello World!</span>
+</div>
+<div class="hello-example">
+    <a href="#portuguese">Portuguese:</a>
+    <span lang="pt">Ola Mundo!</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Simplified):</a>
+    <span lang="zh-CN">世界?好！</span>
+</div>
+<div class="hello-example">
+    <a href="http://example.cn">Chinese (Traditional):</a>
+    <span lang="zh-TW">世界?好！</span>
+</div>
+
 </body>
 </textarea>
 </article>
@@ -473,21 +610,18 @@ background:#ffff00;
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-#itswoong {
+#third {
   background-color:yellow;
 }
 </style>
 </head>
 <body>
 
-<h1>Welcome</h1>
+<h1 id="first">Welcome</h1>
+<p id="second">My name is Han soo woong.</p>
+<p id="third">I live in Seoul.</p>
+<p id="fourth">I'll be back.</p>
 
-<div class="intro">
-  <p id="itswoong">My name is Han soo woong.</p>
-  <p id="hometown">I live in Seoul.</p>
-</div>
-
-<p>I'll be back.</p>
 
 </body>
 </textarea>
@@ -509,28 +643,23 @@ In an HTML document, CSS class selectors match an element based on the contents 
 <textarea class='coder-editor'>
 <head>
 <style type="text/css">
-.first
-{
-background-color:yellow;
+.first {
+  background-color:yellow;
 }
 </style>
 </head>
 
 <body>
-<h1>Welcome</h1>
 
-<div class="first">
-  <p id="second">My name is Han soo woong.</p>
-  <p>I live in Seoul.</p>
-</div>
+<h1 class="first 첫번째">Welcome</h1>
+<p class="second 두번째">My name is Han soo woong.</p>
+<p class="third 세번째">I live in Seoul.</p>
+<p class="fourth 네번째">I'll be back.</p>
 
-<p>I'll be back.</p>
 
 </body>
 </textarea>
 </article>
-
-
 
 
 
@@ -552,7 +681,8 @@ a:link {
 </style>
 </head>
 <body>
-<a href='http://www.davincisdk.com'>DaVinci</a>
+<a href='http://www.davincisdk.com'>www.davinciskd.com</a>
+<br>
 <a >DaVinci</a>
 </body>
 </textarea>
@@ -665,79 +795,6 @@ a:active {
 
 
 
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/:first-child" target="_blank">Pseudo classes :first-child</a>
-</h2>
-<p>
-The :first-child CSS pseudo-class represents any element that is the first child element of its parent.
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css"> 
-p:first-child {
-  background:yellow;
-}
-</style>
-</head>
-<body>
-<div>
-  <p>The first paragraph.</p>
-  <h1>This is a heading</h1>
-  <p>The second paragraph.</p>
-  <p>The third paragraph.</p>
-  <p>The fourth paragraph.</p>
-</div>
-<hr>
-<div>
-  <h1>This is a heading</h1>
-  <p>The first paragraph.</p>
-  <p>The second paragraph.</p>
-  <p>The third paragraph.</p>
-  <p>The fourth paragraph.</p>
-</div>
-</body>
-</textarea>
-</article>
-
-
-<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
-<h2>
-<a href="https://developer.mozilla.org/en-US/docs/CSS/:last-child" target="_blank">Pseudo classes :last-child</a>
-</h2>
-<p>
-The :last-child CSS pseudo-class represents any element that is the last child element of its parent.
-</p>
-<textarea class='coder-editor'>
-<head>
-<style type="text/css"> 
-p:last-child {
-  background:yellow;
-}
-</style>
-</head>
-<body>
-<div>
-  <p>The first paragraph.</p>
-  <h1>This is a heading</h1>
-  <p>The second paragraph.</p>
-  <p>The third paragraph.</p>
-  <p>The fourth paragraph.</p>
-</div>
-<hr>
-<div>
-  <h1>This is a heading</h1>
-  <p>The first paragraph.</p>
-  <p>The second paragraph.</p>
-  <p>The third paragraph.</p>
-  <p>The fourth paragraph.</p>
-</div>
-</body>
-</textarea>
-</article>
-
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
@@ -754,6 +811,14 @@ The :nth-child CSS pseudo-class matches an element that has an+b-1 siblings befo
 p:nth-child(2n+1) {
   background-color:yellow;
 }
+/*
+p:nth-child(2n+1){}
+p:nth-child(odd){}
+p:nth-child(even){}
+p:nth-child(3){}
+p:nth-child(-n+3){}
+p:nth-child(1) == p:first-child()
+*/
 </style>
 </head>
 <body>
@@ -791,7 +856,7 @@ The :nth-last-child CSS pseudo-class matches an element that has an+b-1 siblings
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p:nth-last-child(-n+2) {
+p:nth-last-child(3) {
   background-color:yellow;
 }
 </style>
@@ -801,8 +866,8 @@ p:nth-last-child(-n+2) {
 <div>
   <p>The first paragraph.</p>
   <p>The second paragraph.</p>
-  <p>The third paragraph.</p>
   <h1>This is a heading</h1>
+  <p>The third paragraph.</p>
   <p>The fourth paragraph.</p>
 </div>
 <hr>
@@ -822,6 +887,91 @@ p:nth-last-child(-n+2) {
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
 <article class='slide slide-list'>
 <h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:first-child" target="_blank">Pseudo classes :first-child</a>
+</h2>
+<p>
+The :first-child CSS pseudo-class represents any element that is the first child element of its parent.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:first-child {
+  background:yellow;
+}
+/*
+p:nth-child(1) {
+  background:yellow;
+}
+*/
+</style>
+</head>
+<body>
+<div>
+  <p>The first paragraph.</p>
+  <h1>This is a heading</h1>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+<hr>
+<div>
+  <h1>This is a heading</h1>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+</body>
+</textarea>
+</article>
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
+<a href="https://developer.mozilla.org/en-US/docs/CSS/:last-child" target="_blank">Pseudo classes :last-child</a>
+</h2>
+<p>
+The :last-child CSS pseudo-class represents any element that is the last child element of its parent.
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css"> 
+p:last-child {
+  background:yellow;
+}
+/*
+p:nth-last-child(1) {
+  background:yellow;
+}
+*/
+</style>
+</head>
+<body>
+<div>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+  <h1>This is a heading</h1>
+</div>
+<hr>
+<div>
+  <h1>This is a heading</h1>
+  <p>The first paragraph.</p>
+  <p>The second paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+</body>
+</textarea>
+</article>
+
+
+
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/:nth-of-type" target="_blank">Pseudo classes :nth-of-type</a>
 </h2>
 <p>
@@ -830,7 +980,7 @@ The :nth-of-type CSS pseudo-class matches an element that has an+b-1 siblings wi
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p:nth-of-type(2n+1) {
+p:nth-of-type(2) {
   background-color:yellow;
 }
 </style>
@@ -869,13 +1019,14 @@ The :nth-last-of-type CSS pseudo-class matches an element that has an+b-1 siblin
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-p:nth-last-of-type(2) {
+p:nth-last-of-type(-n+2) {
   background-color:yellow;
 }
 </style>
 </head>
 <body>
 <div>
+  <h1>This is a heading</h1>
   <p>The first paragraph.</p>
   <p>The second paragraph.</p>
   <p>The third paragraph.</p>
@@ -908,6 +1059,11 @@ The :first-of-type CSS pseudo-class represents the first sibling of the given ty
 p:first-of-type {
   background-color:yellow;
 }
+/*
+p:nth-of-type(1) {
+  background-color:yellow;
+}
+*/
 </style>
 </head>
 <body>
@@ -948,6 +1104,11 @@ The :last-of-type CSS pseudo-class represents the last sibling of the given type
 p:last-of-type {
   background-color:yellow;
 }
+/*
+p:nth-last-of-type(1) {
+  background-color:yellow;
+}
+*/
 </style>
 </head>
 <body>
@@ -987,6 +1148,10 @@ The :only-child CSS pseudo-class represents any element which is the only child 
 p:only-child {
   background-color:yellow;
 }
+/*
+p:first-child:last-child {}
+p:nth-child(1):nth-last-child(1) {}
+*/
 </style>
 </head>
 <body>
@@ -1113,7 +1278,7 @@ The :checked CSS pseudo-class selector represents any radio (&lt;input type="rad
 <head>
 <style type="text/css"> 
 input:checked {
-	display: none;
+  display: none;
 }
 </style>
 </head>
@@ -1177,8 +1342,8 @@ input:disabled {
 <body>
 
 <form>
-disabled<input type="text" disabled="disabled"><br>
-enabled<input type="password" >
+  disabled<input type="text" disabled="disabled"><br>
+  enabled<input type="password" >
 </form>
 
 </body>
@@ -1233,17 +1398,15 @@ The CSS :after pseudo-element matches a virtual last child of the selected eleme
 <style type="text/css"> 
 p::after
 { 
-	content:"- Remember this";
-	color:red;
+  content:"- Remember this";
+  color:red;
 }
-
 </style>
 </head>
 <body>
 
 <p>My name is Han soo woong</p>
-<p>I live in Ducksburg</p>
-
+<p>I live in seoul</p>
 
 </body>
 </textarea>
@@ -1283,19 +1446,6 @@ man.
 </textarea>
 </article>
 </article>
-
-
-
-<article class='slide slide-subhead'>
-<h2>Combinators</h2>
-<h3>Descendant combinator</h3>
-<h3>Child combinators</h3>
-<h3>Sibling combinators</h3>
-	<h5>Adjacent sibling combinator</h5>
-	<h5>General sibling combinator</h5>
-</article>
-
-
 
 
 
@@ -1357,9 +1507,9 @@ div > p {
 
 <div>
   <p>정과장</p>
-  <b>
+  <span>
     <p>한과장</p>
-  </b>
+  </span>
 </div>
 
 </body>
@@ -1570,14 +1720,14 @@ li {
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
+li {
+  background-color: green !important;
+}
 #three {
   background-color: aqua;
 }
 .two {
   background-color: pink;
-}
-li {
-  background-color: green !important;
 }
 </style>
 </head>
@@ -1596,6 +1746,39 @@ li {
 </article>
 
 
+<!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
+<article class='slide slide-list'>
+<h2>Groups of selectors</h2>
+
+<p>
+A comma-separated list of selectors represents the union of all elements selected by each of the individual selectors in the list. (A comma is U+002C.) For example, in CSS when several selectors share the same declarations, they may be grouped into a comma-separated list. White space may appear before and/or after the comma.
+<br/>
+div,p<br/>
+Selects all &lt;div&gt; elements and all &lt;p&gt; elements
+</p>
+<textarea class='coder-editor'>
+<head>
+<style type="text/css">
+
+h1 { background-color:yellow; }
+p  { background-color:yellow; }
+
+/* is equivalent to:
+h1,p { background-color:yellow; }
+*/
+/* Invalid CSS example:
+h1,p, div%% { background-color:yellow; }
+*/
+</style>
+</head>
+<body>
+	<h1>Welcome to My Home</h1>
+	<div>My name is Han soo woong</div>
+	<p>Make yourself at home</p>
+</body>
+</textarea>
+</article>
+
 <article class='slide slide-subhead'>
 <h1>reference site</h1>
 <h2><a href='http://www.w3.org/TR/selectors/'>W3C - Selectors Level 3</a></h2>
@@ -1607,8 +1790,6 @@ li {
 <article class='slide slide-subhead'>
 <h1>Thank you</h1>
 </article>
-
-
 
 
 <script src='lib/coderdeck.min.js'></script>

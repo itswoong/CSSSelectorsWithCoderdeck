@@ -219,7 +219,7 @@ a { background-color:yellow; }
 <a href="https://developer.mozilla.org/en-US/docs/CSS/Type_selectors" target="_blank">Simple Selectors - Type Selectors</a>
 </h2>
 <p>
-CSS type selectors match elements by node name. Used alone, therefore, a type selector for a particular node name selects all elements of that type — that is, with that node name — in the document.
+CSS type selectors match elements by node name.
 <p>
 
 <textarea class='coder-editor'>
@@ -248,7 +248,8 @@ p { background-color:yellow; }
 <a href="https://developer.mozilla.org/en-US/docs/CSS/Universal_selectors" target="_blank">Simple Selectors - Universal Selectors</a>
 </h2>
 <p>
-An Asterisk (*) is the universal selector for CSS. It matches a single element of any type. 
+An Asterisk (*) is the universal selector for CSS.<br>
+It matches a single element of any type. 
 </p>
 <textarea class='coder-editor'>
 <head>
@@ -975,7 +976,7 @@ p:nth-last-child(1) {
 <a href="https://developer.mozilla.org/en-US/docs/CSS/:nth-of-type" target="_blank">Pseudo classes :nth-of-type</a>
 </h2>
 <p>
-The :nth-of-type CSS pseudo-class matches an element that has an+b-1 siblings with the same element name before it in the document tree, for a given positive or zero value for n, and has a parent element. See :nth-child for a more thorough description of the syntax of its argument. This is a more flexible and useful pseudo selector if you want to ensure you're selecting the same type of tag no matter where it is inside the parent element, or what other different tags appear before it.
+The :nth-of-type CSS pseudo-class matches an element that has an+b-1 siblings with the same element name before it in the document tree, for a given positive or zero value for n, and has a parent element.
 </p>
 <textarea class='coder-editor'>
 <head>
@@ -1014,7 +1015,7 @@ p:nth-of-type(2) {
 <a href="https://developer.mozilla.org/en-US/docs/CSS/:nth-last-of-type" target="_blank">Pseudo classes :nth-last-of-type</a>
 </h2>
 <p>
-The :nth-last-of-type CSS pseudo-class matches an element that has an+b-1 siblings with the same element name after it in the document tree, for a given positive or zero value for n, and has a parent element. See :nth-child for a more thorough description of the syntax of its argument.
+The :nth-last-of-type CSS pseudo-class matches an element that has an+b-1 siblings with the same element name after it in the document tree, for a given positive or zero value for n, and has a parent element.
 </p>
 <textarea class='coder-editor'>
 <head>
@@ -1439,7 +1440,7 @@ q:after {
 
 <q>Han soo Woong</q>
 is
-<q>ood</q>
+<q>good</q>
 man.
 
 </body>
@@ -1456,7 +1457,6 @@ man.
 </h2>
 <p>
 The ' ' combinator (that's meant to represent a space, or more properly one or more whitespace characters) combines two selectors such that the combined selector matches only those elements matching the second selector for which there is an ancestor element matching the first selector.
-
 </p>
 <p>
 <div class="style-syntax">selector1 selector2 { style properties }</div>
@@ -1465,17 +1465,28 @@ The ' ' combinator (that's meant to represent a space, or more properly one or m
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-div p {
+div ol {
   background-color:DodgerBlue;
 }
+/*
+div ol li {}
+div li {}
+*/
 </style>
 </head>
 <body>
-
 <div>
-  <p>한과장</p>
+	<ol>
+		<li>한수웅</li>
+		<li>아빠</li>
+		<li>36살</li>
+	</ol>
+	<ul>
+		<li>한태현</li>
+		<li>아들</li>
+		<li>7살</li>
+	</ul>
 </div>
-<p>정과장</p>
 
 </body>
 </textarea>
@@ -1498,9 +1509,13 @@ The > combinator separates two selectors and matches only those elements matched
 <textarea class='coder-editor'>
 <head>
 <style type="text/css"> 
-div > p {
+div > span > p {
   background-color:DodgerBlue;
 }
+/*
+div > span > p {}
+div > p {}
+*/
 </style>
 </head>
 <body>
@@ -1515,7 +1530,6 @@ div > p {
 </body>
 </textarea>
 </article>
-
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
@@ -1596,17 +1610,14 @@ The ~ combinator separates two selectors and matches the second element only if 
 <p>
 Specificity is the means by which a browser decides which property values are the most relevant to an element and gets to be applied. Specificity is only based on the matching rules which are composed of selectors of different sorts.
 </p>
-<p>
-The following list of selectors is by increasing specificity:
-</p>
-<ul>
-<li>Universal selectors</li>
-<li>Type selectors</li>
-<li>Class selectors</li>
-<li>Attributes selectors</li>
-<li>Pseudo-classes</li>
-<li>ID selectors</li>
+<ol>
+<li>!important</li>
 <li>Inline style</li>
+<li>ID selectors</li>
+<li>Pseudo-classes, Attributes selectors, Class selectors</li>
+<li>Type selectors, Pseudo-element</li>
+<li>Universal selectors</li>
+
 </ul>
 </article>
 
@@ -1702,7 +1713,7 @@ li {
   <li id=one>One</li>
   <li class="two second">Two</li>
   <li id="three" class="two three third">Three</li>
-  <li data-name="four">Four</li>
+  <li data-name="four" class="four">Four</li>
   <li>Five</li>
 </ul>
 
@@ -1726,7 +1737,7 @@ li {
 #three {
   background-color: aqua;
 }
-.two {
+.two.second {
   background-color: pink;
 }
 </style>

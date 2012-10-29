@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="lib/coderdeck-core.min.css" type="text/css">
 	<link rel="stylesheet" id='style-theme-link' href="lib/coderdeck.css" type="text/css" >
 	<style>
+	.deck-container .slide-style-8-2 .coder-buttons {
+		right: 33%;
+	}
+	.deck-container .slide-style-8-2 .coder-wrapper-split .coder-editor-wrapper {
+		width: 68%;
+	}
+	.deck-container .slide-style-8-2 .coder-wrapper-split .coder-destination {
+		left: 70%;
+		width: 28%;
+	}
+	
 	.deck-container .slide-list h2 {
 		font-size: 1.5em;
 	}
@@ -34,6 +45,10 @@
 		font-weight: bold;
 		font-size: 17px;
 		color: blue;
+	}
+	.deck-container .style-syntax3 {
+		font-weight: bold;
+		color: red;
 	}
 	</style>
 
@@ -94,14 +109,14 @@
     <h1>What is DaVinci?</h1>
     <p id="testid">HTML5 biz App Development</p>
     <p>Create Rich Media Contents</p>
-	<p>Work Flow Tools</p>
+    <p>Work Flow Tools</p>
   </article>
 </section>
 <footer class="footer">
   <div>
-	<p class="copyright">
-		 Copyright © 2012 Incross. All rights reserved.
-	</p>
+    <p class="copyright">
+      Copyright © 2012 Incross. All rights reserved.
+    </p>
   </div>
 </footer>	
 </textarea>
@@ -142,20 +157,19 @@
   <div id="한수웅" class="정우성 장동건"></div>
 </body>
 
-  
 </textarea>
 </article>
 
 <!-- Apply a class of "coder-editor-full" along with "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="http://www.w3.org/TR/selectors" target="_blank">Selectors</a>
 </h2>
 <p>Selectors are patterns that match against elements in a tree, and as such form one of several technologies that can be used to select nodes in an XML document. Selectors have been optimized for use with HTML and XML, and are designed to be usable in performance-critical code.</p>
-<textarea class='coder-editor'>
+<textarea class='coder-editor '>
 <head>
 <style type="text/css">
-a { background-color:yellow; }
+/*a { background-color:yellow; }*/
 </style>
 </head>
 <body>
@@ -178,9 +192,9 @@ a { background-color:yellow; }
 </section>
 <footer class="footer">
   <div>
-	<p class="copyright">
-		 Copyright © 2012 Incross. All rights reserved.
-	</p>
+    <p class="copyright">
+      Copyright © 2012 Incross. All rights reserved.
+    </p>
   </div>
 </footer>	
 </body>
@@ -289,19 +303,19 @@ Attribute selectors select an element using the presence of a given attribute or
 <p>
 <dl>
   <dt>[attr]</dt>
-  <dd>Represents an element with an attribute name of attr.</dd>
+  <dd>Represents an element with an attribute <b class="style-syntax3">name</b> of attr.</dd>
   <dt>[attr=value]</dt>
-  <dd>Represents an element with an attribute name of attr and whose value is exactly "value".</dd>
+  <dd>Represents an element with an attribute name of attr and whose value is <b class="style-syntax3">exactly</b> "value".</dd>
   <dt>[attr~=value]</dt>
-  <dd>Represents an element with an attribute name of attr whose value is a whitespace-separated list of words, one of which is exactly "value".</dd>
+  <dd>Represents an element with an attribute name of attr whose value is a <b class="style-syntax3">whitespace-separated</b> list of words, one of which is exactly "value".</dd>
   <dt>[attr|=value]</dt>
-  <dd>Represents an element with an attribute name of attr whose value is a hyphen-separated list of words, one of which is exactly "value". It can be used for language subcode matches.</dd>
+  <dd>Represents an element with an attribute name of attr whose value is a <b class="style-syntax3">hyphen-separated</b> list of words, one of which is exactly "value". It can be used for language subcode matches.</dd>
   <dt>[attr^=value]</dt>
-  <dd>Represents an element with an attribute name of attr and whose value is the prefixed by "value".</dd>
+  <dd>Represents an element with an attribute name of attr and whose value is the <b class="style-syntax3">prefixed</b> by "value".</dd>
   <dt>[attr$=value]</dt>
-  <dd>Represents an element with an attribute name of attr and whose value is the suffixed by "value".</dd>
+  <dd>Represents an element with an attribute name of attr and whose value is the <b class="style-syntax3">suffixed</b> by "value".</dd>
   <dt>[attr*=value]</dt>
-  <dd>Represents an element with an attribute name of attr and whose value contains at least one occurrence of string "value" as substring.</dd>
+  <dd>Represents an element with an attribute name of attr and whose value <b class="style-syntax3">contains</b> at least one occurrence of string "value" as substring.</dd>
 </dl>
 </p>
 
@@ -310,7 +324,7 @@ Attribute selectors select an element using the presence of a given attribute or
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr]</a>
 </h2>
@@ -350,7 +364,7 @@ Attribute selectors select an element using the presence of a given attribute or
 </article>
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr=value]</a>
 </h2>
@@ -391,7 +405,7 @@ span[lang="pt"] {color:red;}
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr~=value]</a>
 </h2>
@@ -432,7 +446,7 @@ span[lang~="en-us"] {color: red;}
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr|=value]</a>
 </h2>
@@ -473,7 +487,7 @@ span[lang|="zh"] {color: red;}
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr^=value]</a>
 </h2>
@@ -516,7 +530,7 @@ a[href^="#"] {color:red}
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr$=value]</a>
 </h2>
@@ -559,7 +573,7 @@ a[href$=".cn"] {color: red;}
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/Attribute_selectors" target="_blank">Simple Selectors - Attribute selectors [attr*=value]</a>
 </h2>
@@ -623,7 +637,6 @@ a[href*="example"] {color: red;}
 <p id="third">I live in Seoul.</p>
 <p id="fourth">I'll be back.</p>
 
-
 </body>
 </textarea>
 </article>
@@ -656,7 +669,6 @@ In an HTML document, CSS class selectors match an element based on the contents 
 <p class="second 두번째">My name is Han soo woong.</p>
 <p class="third 세번째">I live in Seoul.</p>
 <p class="fourth 네번째">I'll be back.</p>
-
 
 </body>
 </textarea>
@@ -1268,7 +1280,7 @@ The :target pseudo-class represents the unique element, if any, with an id match
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/:checked" target="_blank">Pseudo classes :checked</a>
 </h2>
@@ -1376,8 +1388,7 @@ p:not(.classy) {
 
 <p class="woong">Some text.</p>
 <p class="classy">Some other text.</p>
-<p>One more text<p>
-
+<p>One more text</p>
 
 </body>
 </textarea>
@@ -1658,7 +1669,7 @@ LI.red.level    /* a=0 b=2 c=1 -> specificity =  21 */
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/General_sibling_selectors" target="_blank">Calculating a selector's specificity : sample (1)</a>
 </h2>
@@ -1689,7 +1700,7 @@ ul li{
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/General_sibling_selectors" target="_blank">Calculating a selector's specificity : sample (2)</a>
 </h2>
@@ -1724,7 +1735,7 @@ li {
 
 
 <!-- Apply a class of "coder-editor" to a textarea to make it show up as runnable code -->
-<article class='slide slide-list'>
+<article class='slide slide-list slide-style-8-2'>
 <h2>
 <a href="https://developer.mozilla.org/en-US/docs/CSS/General_sibling_selectors" target="_blank">Calculating a selector's specificity : sample (3)</a>
 </h2>
